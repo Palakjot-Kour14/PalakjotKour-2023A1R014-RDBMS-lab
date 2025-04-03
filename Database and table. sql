@@ -1,0 +1,43 @@
+create database university;
+use university;
+create table students(
+studentID int,
+Firstname varchar(100),
+Lastname varchar(100),
+DOB int,
+Email varchar(100),
+DepartmentID int
+);
+desc students;
+alter table students add contact bigint;
+alter table students modify DOB date;
+alter table students add primary key(studentID);
+create table department (
+departmentID int primary key,
+departmentName varchar(100),
+location varchar(100)
+);
+create table courses(
+courseID int primary key,
+courseName varchar(100),
+departmentId int,
+credits int
+);
+create table professors(
+professorID int primary key,
+firstName varchar(100),
+lastName varchar(100),
+email varchar(100),
+departmentID int
+);
+show databases;
+show tables;
+desc students;
+alter table students 
+change DOB dob varchar(100);
+alter table students drop contact;
+create table stu as select * from students;
+desc stu;
+drop table stu;
+rename table students to student;
+show tables;
